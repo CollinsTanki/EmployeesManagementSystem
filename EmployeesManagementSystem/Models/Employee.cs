@@ -1,6 +1,6 @@
 ﻿namespace EmployeesManagementSystem.Models
 {
-    public class Employee
+    public class Employee:UserActivity
     {
         public int Id { get; set; }
         public string EmpNo { get; set; }

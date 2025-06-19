@@ -38,6 +38,12 @@ namespace EmployeesManagementSystem.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CreatedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
@@ -68,6 +74,12 @@ namespace EmployeesManagementSystem.Data.Migrations
                     b.Property<string>("MiddleName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("PhoneNumber")
                         .HasColumnType("int");
