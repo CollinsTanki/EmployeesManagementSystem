@@ -12,5 +12,8 @@ namespace EmployeesManagementSystem.Data
         }
 
          public DbSet<Employee> Clients { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Designation> Designations { get; set; }
+
     }
 }
