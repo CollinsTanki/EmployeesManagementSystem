@@ -2,7 +2,7 @@
 
 namespace EmployeesManagementSystem.Models
 {
-    public class SystemCode
+    public class SystemCode:UserActivity
     {
         [Key]
         public  int Id { get; set; }
