@@ -46,6 +46,7 @@ namespace EmployeesManagementSystem.Controllers
         // GET: SystemCodeDetails/Create
         public IActionResult Create()
         {
+            ViewData["SystemCodeId"] = new SelectList(_context.SystemCodes, "Id", "Description");
             return View();
         }
 

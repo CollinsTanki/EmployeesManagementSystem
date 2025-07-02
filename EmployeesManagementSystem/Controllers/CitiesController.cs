@@ -48,7 +48,7 @@ namespace EmployeesManagementSystem.Controllers
         // GET: Cities/Create
         public IActionResult Create()
         {
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id");
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name");
             return View();
         }
 
@@ -57,15 +57,13 @@ namespace EmployeesManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Code,Name,CountryId")] City city)
+        public async Task<IActionResult> Create( City city)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(city);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id", city.CountryId);
+           
+            _context.Add(city);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));            
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", city.CountryId);
             return View(city);
         }
 

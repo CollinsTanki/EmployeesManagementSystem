@@ -3,6 +3,7 @@ html {
 }
 
 @media (min-width: 768px) {
+    <script src="~/AdminLTE/js/demo.js"></script>
   html {
     font-size: 16px;
   }
